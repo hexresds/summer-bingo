@@ -100,7 +100,7 @@ function Game() {
   return (
     <div className="container">
       <Header
-        isLineWin={isLineCompleted}
+        isLineCompleted={isLineCompleted}
         isBingoCompleted={isBingoCompleted}
       />
       <div className="board">
