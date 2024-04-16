@@ -27,3 +27,17 @@
 .container {
   text-align: center;
 }
+
+h1 {
+  font-family: "Anton", sans-serif;
+  font-weight: 400;
+  font-style: italic;
+  font-size: 67px;
+} 
+
+h2 {
+  font-family: "Anton", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 22px;
+} 

@@ -13,14 +13,14 @@ function Game() {
     JSON.parse(localStorage.getItem('bingoHistory')) || [12]
   );
   const [matchedCombinations, setMatchedCombinations] = useState([]);
-  const [isBingo, setIsBingo] = useState(false);
+  const [isLineCompleted, setIsLineCompleted] = useState(false);
 
   const bingoAudio = new Audio(audioEffect);
 
   const handleClick = (number) => {
     const newHistory = [...history, number];
     setHistory(newHistory);
-    setIsBingo(false);
+    setIsLineCompleted(false);
     checkLine(newHistory);
   };
 
@@ -28,6 +28,8 @@ function Game() {
     setHistory([12]);
     window.location.reload(false);
   };
+
+  const isBingoCompleted = history.length === 25;
 
   const horizontalCombos = [
     [0, 1, 2, 3, 4],
@@ -59,7 +61,7 @@ function Game() {
         )
       ) {
         setMatchedCombinations([...matchedCombinations, combo]);
-        setIsBingo(true);
+        setIsLineCompleted(true);
         bingoAudio.play();
       }
     });
@@ -72,7 +74,7 @@ function Game() {
         )
       ) {
         setMatchedCombinations([...matchedCombinations, combo]);
-        setIsBingo(true);
+        setIsLineCompleted(true);
         bingoAudio.play();
       }
     });
@@ -85,7 +87,7 @@ function Game() {
         )
       ) {
         setMatchedCombinations([...matchedCombinations, combo]);
-        setIsBingo(true);
+        setIsLineCompleted(true);
         bingoAudio.play();
       }
     });
@@ -97,7 +99,10 @@ function Game() {
 
   return (
     <div className="container">
-      <Header isBingo={isBingo} />
+      <Header
+        isLineWin={isLineCompleted}
+        isBingoCompleted={isBingoCompleted}
+      />
       <div className="board">
         {summerActivities.map((activity) => (
           <Square
@@ -109,9 +114,7 @@ function Game() {
           />
         ))}
       </div>
-      <Button className="reset-button" onClick={onResetGame}>
-        RESET BOARD
-      </Button>
+      <Button className="reset-button" onClick={onResetGame} />
     </div>
   );
 }

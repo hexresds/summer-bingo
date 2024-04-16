@@ -1,9 +1,9 @@
 import './Button.css';
 
-function Button({ onClick, children }) {
+function Button({ onClick }) {
   return (
     <button className="reset-button" onClick={onClick}>
-      {children}
+      RESET BOARD{' '}
     </button>
   );
 }
