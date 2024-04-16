@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+
+.animated {
+    background-image: linear-gradient(
+    -225deg,
+    #ffb700 0%,
+    #ff450d 29%,
+    #ff1361 67%,
+    #ff9100 100%
+    );
+    background-size: auto auto;
+    background-clip: border-box;
+    background-size: 200% auto;
+    background-clip: text;
+    text-fill-color: transparent;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: textclip 3s linear infinite;
+  }
+  
+@keyframes textclip {
+  to {
+    background-position: 200% center;
+  }
+}
+
+.container {
+  text-align: center;
+}

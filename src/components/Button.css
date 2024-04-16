@@ -1,0 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+
+.reset-button {
+  background-color: none;
+  border: none;
+  box-shadow: none;
+  font-family: "Anton", sans-serif;
+  font-style: normal;
+  font-size: 20px;
+  margin: 20px;
+  padding: 10px;
+  width: 150px;
+}
