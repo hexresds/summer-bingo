@@ -17,7 +17,11 @@ cd summer-bingo
 npm install
 ```
 
-3. Scan the barcode with the Expo app on your phone or follow the terminal instructions to load up the emulator on your machine.
+3. Run the app
+
+```
+npm start
+```
 
 ## Built with
 
